@@ -1,0 +1,5 @@
+pymupdf
+ollama
+requests
+python-dotenv
+pillow
