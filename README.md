@@ -21,7 +21,7 @@ pulled (`ollama pull gemma4:latest`).
 
 | key | meaning |
 |-----|---------|
-| `WP_URL` | site base URL (default `https://electricant.space`) |
+| `WP_URL` | site base URL |
 | `WP_USER` | your WordPress login username |
 | `WP_APP_PASSWORD` | an **Application Password** — create at *WP Admin → Users → Profile → Application Passwords*. Paste the spaced value as-is. |
 | `WP_AUTHOR` | default author credited on posts — username/slug or numeric user id. The `WP_USER` account needs permission to edit others' posts (Author/Editor/Admin) to attribute to a *different* user. |
@@ -70,14 +70,7 @@ Then publish:
 
 ### `--fix-spacing`
 
-Some PDFs (including the Electric Ant zine's display/bio text) encode certain
-text runs with **no space glyphs**, so extraction produces run-together words
-like `performsattheCambridgeFactory`. With `--fix-spacing`, each affected line
-is sent through the LLM to reinsert **only** spaces. A guard checks that the
-letters/digits are unchanged (spaces are the only allowed edit); if a line
-comes back altered, the original is kept. Repair is done line-by-line so one
-bad line never spoils the rest of a post. Body prose that already has spaces is
-left untouched, so this is safe to leave on.
+Some PDFs encode certain text runs with **no space glyphs**, so extraction produces run-together words like `performsattheCambridgeFactory`. With `--fix-spacing`, each affected line is sent through the LLM to reinsert **only** spaces. A guard checks that the letters/digits are unchanged (spaces are the only allowed edit); if a line comes back altered, the original is kept. Repair is done line-by-line so one bad line never spoils the rest of a post. Body prose that already has spaces is left untouched, so this is safe to leave on.
 
 ### OCR (vectorized-text pages)
 
