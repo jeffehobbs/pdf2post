@@ -1,12 +1,8 @@
 # pdf2post
 
-Break a local PDF into discrete "posts" and publish them to a WordPress site
-(defaults to **electricant.space**) via the REST API. Uses a local LLM
-(**gemma4** via Ollama) to decide where each post begins and to title it, and
-pulls embedded artwork out of the PDF to use as each post's featured image.
+Break a local PDF into discrete "posts" and publish them to a WordPress site via the WP REST API. Uses a local LLM (**gemma4** via Ollama) to decide where each post begins and to title it, and pulls embedded artwork out of the PDF to use as each post's featured image.
 
-The LLM only chooses **boundaries and titles** — post bodies are assembled
-**verbatim** from the extracted text, so nothing in the body is hallucinated.
+The LLM only chooses **boundaries and titles** — post bodies are assembled **verbatim** from the extracted text, so nothing in the body is hallucinated.
 
 ## Setup
 
